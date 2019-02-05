@@ -1,16 +1,12 @@
-
-
-def prime?(integer)
-  number = 1
-  counter = 0
-  while number < integer
-    if integer % number == 0
-      counter += 1
-    end
-    number += 1
-  end
-  if counter == 2 return true
-  else
+def prime?(num)
+  if num < 0 or num == 0 or num == 1
     return false
+  else
+    (2..num-1).to_a.all? do |possible_factor|
+      num % possible_factor != 0
+    end
   end
 end
+
+
+prime?(2)
